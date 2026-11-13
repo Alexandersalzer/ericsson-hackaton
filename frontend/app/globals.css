@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Every token here becomes a Tailwind utility:
+ *   --color-accent  -> text-accent, bg-accent, border-accent
+ *   --text-hero     -> text-hero
+ *   --container-content -> max-w-content
+ * Change a value here and the whole UI follows.
+ */
+@theme {
+  /* Colors: black and white, gray for secondary text, ONE accent. */
+  --color-paper: #ffffff;   /* page background */
+  --color-ink: #000000;     /* primary text */
+  --color-muted: #6b6b6b;   /* secondary text (4.6:1 on white, readable) */
+  --color-faint: #a3a3a3;   /* disabled items only */
+  --color-line: #e5e5e5;    /* 1px structural borders */
+  --color-wash: #f7f7f7;    /* image placeholders, drop zone hover */
+  --color-accent: #0082f0;  /* Ericsson-style blue. 3.9:1 on white: use for large/bold text and states, not small body text */
+
+  /* Type */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-hero: 7rem;        /* the "99.5% less storage" number */
+  --text-hero--line-height: 1;
+  --text-hero--letter-spacing: -0.04em;
+  --text-display: 3rem;     /* big before/after numbers, page titles */
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.02em;
+
+  /* Layout */
+  --container-content: 60rem;  /* 960px reading width */
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}

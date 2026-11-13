@@ -24,6 +24,15 @@ class TranscriptSegment(BaseModel):
     text: str
 
 
+class SourceInfo(BaseModel):
+    """Facts about one source video. Written by machine 1 (transcribe) to info.json."""
+    source_id: str
+    file_name: str             # original file name, e.g. "ericsson_talk.mp4"
+    duration: float            # seconds (faster-whisper info.duration)
+    language: str              # detected language code, e.g. "en"
+    language_probability: float  # 0..1
+
+
 class Slide(BaseModel):
     """One unique slide captured from a video. Written by machine 2 (slides)."""
     id: str                    # "slide-004"
@@ -61,6 +70,16 @@ class Record(BaseModel):
     matched_doc: str | None = None    # set by machine 7 (match)
     matched_page: int | None = None
     match_distance: int | None = None
+
+
+class Measure(BaseModel):
+    """Storage before vs after for one source. Written by machine 8 (measure) to measure.json."""
+    source_id: str
+    original_bytes: int        # size of the input video
+    distilled_bytes: int       # transcript.json + records.json + <source_id>.txt + slide images
+    saved_percent: float       # 0..100
+    slide_count: int
+    breakdown: dict[str, int]  # bytes per output, e.g. {"transcript.json": 1234, "slides": 456789}
 
 
 # ---------------------------------------------------------------------------

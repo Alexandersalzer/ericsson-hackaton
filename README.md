@@ -24,7 +24,7 @@ Put videos and PDFs in `data/input/`. Run every command from the repo root.
 | 1 Transcribe | `python -m vault.transcribe data/input/event.mp4` | `data/output/event/transcript.json` |
 | 2 Slides | `python -m vault.slides data/input/event.mp4` | `data/output/event/slides.json` + `data/store/slides/*.jpg` |
 | ... | phases 2 to 7, see SPEC.md §8 | |
-| UI | `streamlit run app.py` | browser |
+| UI | `cd frontend && npm install && npm run dev` | http://localhost:3000 |
 
 ## Test
 

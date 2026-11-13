@@ -19,6 +19,9 @@ models/
 *.bin
 *.onnx
 
+# Personal Claude Code settings (per machine)
+.claude/settings.local.json
+
 # OS / editor
 .DS_Store
 .vscode/

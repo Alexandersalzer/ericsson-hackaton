@@ -9,7 +9,8 @@ Rules for AI coding tools (and humans) working in this repo.
 - Each **machine** is one module in `vault/` (e.g. `vault/slides.py`). It reads files and writes files. Machines never import or call each other; they share data only through JSON files.
 - Output goes to `data/output/<source_id>/`, where `source_id` is the input filename without extension (`event.mp4` → `event`). Slide images go to `data/store/slides/<phash>.jpg`, stored once.
 - All data models live in `vault/schema.py` (pydantic). Use them for every JSON you read or write, via `save_models()` / `load_models()`.
-- **Do not change `vault/schema.py` without updating SPEC.md §5 and telling the team.** Other people build against it in parallel.
+- **Do not change `vault/schema.py` without updating SPEC.md §5, `frontend/lib/types.ts`, and telling the team.** Other people build against it in parallel.
+- The UI lives in `frontend/` (Next.js 16, see SPEC.md §7 and `frontend/AGENTS.md`). It reads data only through `frontend/lib/data.ts`.
 - All structured output is JSON (lists of objects), so it is AI-ready.
 - Every machine runs from the command line: `python -m vault.<machine> <input_path>`, run from the repo root.
 - Machines must be re-runnable: running twice gives the same result and overwrites old output. Create output folders with `mkdir(parents=True, exist_ok=True)`.

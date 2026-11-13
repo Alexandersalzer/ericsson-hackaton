@@ -2,10 +2,15 @@
 import pytest
 from pydantic import ValidationError
 
-from vault.schema import DocPage, Record, Slide, TranscriptSegment, load_models, save_models
+from vault.schema import (DocPage, Measure, Record, Slide, SourceInfo, TranscriptSegment,
+                          load_models, save_models)
 
 EXAMPLES = [
     TranscriptSegment(start=0.0, end=4.2, text="Welcome everyone."),
+    SourceInfo(source_id="event", file_name="event.mp4", duration=245.3, language="en",
+               language_probability=0.98),
+    Measure(source_id="event", original_bytes=105_000_000, distilled_bytes=520_000, saved_percent=99.5,
+            slide_count=5, breakdown={"transcript.json": 4000, "slides": 500_000}),
     Slide(id="slide-001", source_id="event", start=0.0, end=12.0,
           image_path="data/store/slides/abcd1234abcd1234.jpg", phash="abcd1234abcd1234"),
     DocPage(doc_path="data/input/deck.pdf", doc_name="deck.pdf", page_number=1,

@@ -78,7 +78,10 @@ hackaton/
 │  ├─ measure.py        machine 8
 │  ├─ search.py         machine 9
 │  └─ pipeline.py
-├─ app.py               Streamlit UI
+├─ frontend/            Next.js UI (see §7)
+│  ├─ app/              pages + route handlers
+│  ├─ lib/types.ts      mirror of vault/schema.py
+│  └─ mock/             mock data, same layout as data/
 └─ tests/
 ```
 
@@ -91,6 +94,13 @@ class TranscriptSegment:   # one piece of speech
     start: float           # seconds
     end: float
     text: str
+
+class SourceInfo:          # facts about one video (machine 1, info.json)
+    source_id: str
+    file_name: str         # "ericsson_talk.mp4"
+    duration: float        # seconds
+    language: str          # detected language code, "en"
+    language_probability: float
 
 class Slide:               # one unique slide captured from a video
     id: str                # "slide-004"
@@ -124,7 +134,17 @@ class Record:              # the final AI-ready unit: one slide + what was said
     matched_doc: str | None = None    # set by machine 7
     matched_page: int | None = None
     match_distance: int | None = None
+
+class Measure:             # storage before vs after (machine 8, measure.json, one object)
+    source_id: str
+    original_bytes: int    # input video
+    distilled_bytes: int   # transcript.json + records.json + <source_id>.txt + slide images
+    saved_percent: float   # 0..100
+    slide_count: int
+    breakdown: dict[str, int]  # bytes per output
 ```
+
+The frontend mirrors these models in `frontend/lib/types.ts`. Change both in the same commit.
 
 ---
 
@@ -132,7 +152,7 @@ class Record:              # the final AI-ready unit: one slide + what was said
 
 ### Machine 1: Transcribe (`vault/transcribe.py`)
 - **Input:** video file
-- **Output:** `transcript.json` (list of TranscriptSegment)
+- **Output:** `transcript.json` (list of TranscriptSegment) + `info.json` (one SourceInfo: duration, detected language)
 - **How:** faster-whisper, model `base` for development, `small` for the final demo. `device="cpu"`, `compute_type="int8"`. Language auto-detect.
 - **Accept when:** running on the sample video prints segments with sensible timestamps and the JSON validates against the schema.
 
@@ -190,7 +210,7 @@ class Record:              # the final AI-ready unit: one slide + what was said
 
 ### Machine 8: Measure (`vault/measure.py`)
 - **Input:** a `source_id`
-- **Output:** `measure.json` + printed table
+- **Output:** `measure.json` (one Measure, sizes in bytes) + printed table
 - **How:** original video size vs. sum of transcript.json + records.json + `<source_id>.txt` + slide images used by this source. The original is reported as "can be archived", never deleted. Report MB before, MB after, % saved. Also report savings from document dedup (from machine 6).
 - **Accept when:** numbers are correct (check one by hand).
 
@@ -202,16 +222,21 @@ class Record:              # the final AI-ready unit: one slide + what was said
 
 ---
 
-## 7. UI (`app.py`, Streamlit)
+## 7. UI (`frontend/`, Next.js)
 
-Keep it simple and clean. Four tabs:
+Next.js (App Router) + TypeScript + Tailwind in `frontend/`. Run with `cd frontend && npm run dev`, open http://localhost:3000.
 
-1. **Overview:** big numbers: MB before, MB after, % saved, number of slides, number of duplicates found.
-2. **Search:** search box → result cards with slide image, spoken text, slide text, timestamp, and matched PDF + page if any.
-3. **Timeline:** the video's slides in order, each with its spoken text (the "distilled video").
-4. **Duplicates:** the three duplicate groups from machine 6, with "could free X MB".
+- **No separate API server.** Next.js route handlers read the JSON files in `data/output/` and serve slide images from `data/store/slides/`.
+- **Types:** `frontend/lib/types.ts` mirrors `vault/schema.py` field for field.
+- **Mock data:** `frontend/mock/` has the same layout as `data/` (`mock/output/<source_id>/`, `mock/store/slides/`). One flag, `DATA_SOURCE=mock|real`, picks the folder. Nothing else in the UI knows which one it reads.
+- **Processing:** the UI never processes data itself. The upload route saves the video to `data/input/` and starts the existing machines (`python -m vault.<machine>`) as separate processes with the project venv. A missing or failing machine shows as "not available yet" and the run continues.
+- **Design:** white, black, gray, one accent (#0082F0). Max content width 960px. 1px #E5E5E5 borders, no shadows or gradients. Inter. Big savings numbers are the hero.
 
-Run with `streamlit run app.py`. The UI only reads files in `data/output/`. It never runs heavy processing itself.
+Screens:
+
+1. **Compress** (`/`): headline, drop zone for a video, a checklist (Transcribing → Capturing slides → Linking → Measuring), then Before → After and "% less storage" as the biggest element, plus "Open meeting".
+2. **Meeting** (`/meeting/<source_id>`): the "recreated meeting". Header with name, duration, language, before/after size. Slides in order, each with image, time range and what was said. Sticky slide list on the left (wide screens). Downloads: plain text (`<source_id>.txt`) and AI-ready JSON (`records.json`).
+3. **Later** (shown disabled in the top nav): Library of all meetings, Search (machine 9), Duplicates (machine 6).
 
 ---
 
@@ -222,8 +247,8 @@ Run with `streamlit run app.py`. The UI only reads files in `data/output/`. It n
 | 1 | Setup + 1 Transcribe + 2 Slides | Both run on a real Ericsson video |
 | 2 | 4 Link + 8 Measure | `records.json` exists and % saved is printed |
 | 3 | 5 Docs + 6 Dedup | Duplicate report correct on sample PDFs |
-| 4 | UI tabs 1, 3, 4 | Overview, timeline and duplicates visible |
-| 5 | 9 Search + UI tab 2 | Search finds the right slide |
+| 4 | UI: Compress + Meeting screens | Upload a video, see % saved, read the meeting |
+| 5 | 9 Search + UI Search, Duplicates | Search finds the right slide |
 | 6 | 7 Match + 3 OCR | Slides linked to PDF pages |
 | 7 | `pipeline.py` | One command runs everything end to end |
 
@@ -268,7 +293,6 @@ pymupdf
 pydantic
 numpy
 sentence-transformers
-streamlit
 pytesseract      # optional, needs: brew install tesseract
 pytest
 ```
