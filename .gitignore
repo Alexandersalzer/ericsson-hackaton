@@ -1,0 +1,25 @@
+# Each person builds their own virtual environment
+venv/
+.venv/
+
+# Videos, PDFs and generated output are too big for git.
+# Keep only the empty .gitkeep files so the folder layout exists after cloning.
+data/**
+!data/**/
+!data/**/.gitkeep
+
+# Python / tool caches
+__pycache__/
+*.pyc
+.pytest_cache/
+.streamlit/secrets.toml
+
+# Models (normally cached in ~/.cache, but never commit them if they end up here)
+models/
+*.bin
+*.onnx
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

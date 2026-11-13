@@ -1,0 +1,15 @@
+# Python 3.13 recommended (3.14 may lack prebuilt wheels for some packages).
+# Install with: pip install -r requirements.txt
+
+faster-whisper           # machine 1: speech-to-text
+av<19                    # audio decoding for faster-whisper; av 19 removed an argument faster-whisper 1.2.1 still uses
+opencv-python            # machine 2: read video frames
+imagehash                # perceptual hashes for slides and PDF pages
+Pillow                   # image handling
+pymupdf                  # machine 5: read PDFs (imported as "fitz")
+pydantic                 # shared data models in vault/schema.py
+numpy
+sentence-transformers    # machine 9: search embeddings
+streamlit                # UI (app.py)
+pytesseract              # machine 3: OCR, also needs: brew install tesseract
+pytest
