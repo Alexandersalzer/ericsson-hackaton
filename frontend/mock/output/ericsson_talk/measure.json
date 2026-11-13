@@ -1,0 +1,13 @@
+{
+  "source_id": "ericsson_talk",
+  "original_bytes": 105000000,
+  "distilled_bytes": 152550,
+  "saved_percent": 99.85,
+  "slide_count": 5,
+  "breakdown": {
+    "transcript.json": 2001,
+    "records.json": 3000,
+    "ericsson_talk.txt": 1460,
+    "slides": 146089
+  }
+}

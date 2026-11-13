@@ -1,0 +1,41 @@
+[
+  {
+    "id": "jury_and_prizes-slide-001",
+    "source_id": "jury_and_prizes",
+    "slide_id": "slide-001",
+    "start": 0.0,
+    "end": 104.0,
+    "spoken_text": "Let me explain how the jury will judge your work. You will be judged on technology, design and business, and on how innovative the idea is. A tech concept is an idea based on digital technology. It does not have to be a finished product.",
+    "slide_text": "Judging criteria\nTechnology, design, business, innovativeness",
+    "image_path": "data/store/slides/c0843f93c0e43fbb.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  },
+  {
+    "id": "jury_and_prizes-slide-002",
+    "source_id": "jury_and_prizes",
+    "slide_id": "slide-002",
+    "start": 104.0,
+    "end": 210.0,
+    "spoken_text": "There are two prizes: one for best technology and design, and one for best business. The jury has people from BTH and Hyper Island together with Ericsson.",
+    "slide_text": "Two prizes\nBest technology/design and best business",
+    "image_path": "data/store/slides/c0b63f89e0e21d9d.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  },
+  {
+    "id": "jury_and_prizes-slide-003",
+    "source_id": "jury_and_prizes",
+    "slide_id": "slide-003",
+    "start": 210.0,
+    "end": 312.0,
+    "spoken_text": "Hand in your work on day two at half past three, in your team folder on the Google Drive. Slides or a video, five minutes. Keep it short and show what works.",
+    "slide_text": "Deliverables\nDay 2, 15:30. Five-minute presentation",
+    "image_path": "data/store/slides/c0e23f9dc0e23d1d.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  }
+]

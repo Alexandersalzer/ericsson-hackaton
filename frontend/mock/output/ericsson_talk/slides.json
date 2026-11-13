@@ -1,0 +1,47 @@
+[
+  {
+    "id": "slide-001",
+    "source_id": "ericsson_talk",
+    "start": 0.0,
+    "end": 38.0,
+    "image_path": "data/store/slides/e0c01f9fe0e01f1f.jpg",
+    "phash": "e0c01f9fe0e01f1f",
+    "ocr_text": "Hackathon\nTech concept challenge"
+  },
+  {
+    "id": "slide-002",
+    "source_id": "ericsson_talk",
+    "start": 38.0,
+    "end": 92.0,
+    "image_path": "data/store/slides/c2c63db1c2c63d39.jpg",
+    "phash": "c2c63db1c2c63d39",
+    "ocr_text": "The problem\nStorage grows every year"
+  },
+  {
+    "id": "slide-003",
+    "source_id": "ericsson_talk",
+    "start": 92.0,
+    "end": 131.0,
+    "image_path": "data/store/slides/c2c63db1c2c63d39.jpg",
+    "phash": "c2c63db1c2c63d39",
+    "ocr_text": "The problem\nKnowledge is locked in video"
+  },
+  {
+    "id": "slide-004",
+    "source_id": "ericsson_talk",
+    "start": 131.0,
+    "end": 214.0,
+    "image_path": "data/store/slides/c09b3fe4c0933f2c.jpg",
+    "phash": "c09b3fe4c0933f2c",
+    "ocr_text": "Suggested Use Cases\nMeetings, documents, offboarding"
+  },
+  {
+    "id": "slide-005",
+    "source_id": "ericsson_talk",
+    "start": 214.0,
+    "end": 245.0,
+    "image_path": "data/store/slides/c0cc3fb1c0cc3b3b.jpg",
+    "phash": "c0cc3fb1c0cc3b3b",
+    "ocr_text": "Ericsson logo\n(placeholder image)"
+  }
+]

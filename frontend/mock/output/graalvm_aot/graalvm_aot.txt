@@ -1,0 +1,11 @@
+SLIDE 001   00:00:00 - 00:06:52
+IMAGE d0922fe9d0962f69.jpg
+Today we look at ahead-of-time compilation, where Java code is compiled before it runs. The result is a native executable that does not need a JVM to start.
+
+SLIDE 002   00:06:52 - 00:16:20
+IMAGE c0993fa6c0d93727.jpg
+The big win is startup time. A service can be ready in milliseconds. Memory use also drops, because there is no JIT compiler running next to your code.
+
+SLIDE 003   00:16:20 - 00:25:34
+IMAGE c0e31f8ce0e31f9c.jpg
+There are trade-offs. Builds take longer, and reflection needs extra configuration. For long-running services the JIT can still reach higher peak performance.

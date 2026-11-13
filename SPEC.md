@@ -230,7 +230,7 @@ Next.js (App Router) + TypeScript + Tailwind in `frontend/`. Run with `cd fronte
 - **Types:** `frontend/lib/types.ts` mirrors `vault/schema.py` field for field.
 - **Mock data:** `frontend/mock/` has the same layout as `data/` (`mock/output/<source_id>/`, `mock/store/slides/`). One flag, `DATA_SOURCE=mock|real`, picks the folder. Nothing else in the UI knows which one it reads.
 - **Processing:** the UI never processes data itself. The upload route saves the video to `data/input/` and starts the existing machines (`python -m vault.<machine>`) as separate processes with the project venv. A missing or failing machine shows as "not available yet" and the run continues.
-- **Design:** white, black, gray, one accent (#0082F0). Max content width 960px. 1px #E5E5E5 borders, no shadows or gradients. Inter. Big savings numbers are the hero.
+- **Design:** modern Vercel/Notion style. Geist Sans + Geist Mono (mono for numbers and metadata), neutral grays, black primary buttons, 1px soft borders, rounded cards, no gradients. One blue accent (#0082F0) only for focus, progress and the "after" bar. Max width 1024px. Big savings numbers are the hero. Tokens live in `frontend/app/globals.css`.
 
 Screens:
 

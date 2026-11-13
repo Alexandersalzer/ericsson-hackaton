@@ -1,0 +1,41 @@
+[
+  {
+    "id": "graalvm_aot-slide-001",
+    "source_id": "graalvm_aot",
+    "slide_id": "slide-001",
+    "start": 0.0,
+    "end": 412.0,
+    "spoken_text": "Today we look at ahead-of-time compilation, where Java code is compiled before it runs. The result is a native executable that does not need a JVM to start.",
+    "slide_text": "Ahead-of-time compilation\nFrom bytecode to a native executable",
+    "image_path": "data/store/slides/d0922fe9d0962f69.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  },
+  {
+    "id": "graalvm_aot-slide-002",
+    "source_id": "graalvm_aot",
+    "slide_id": "slide-002",
+    "start": 412.0,
+    "end": 980.0,
+    "spoken_text": "The big win is startup time. A service can be ready in milliseconds. Memory use also drops, because there is no JIT compiler running next to your code.",
+    "slide_text": "Startup and memory\nMilliseconds instead of seconds",
+    "image_path": "data/store/slides/c0993fa6c0d93727.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  },
+  {
+    "id": "graalvm_aot-slide-003",
+    "source_id": "graalvm_aot",
+    "slide_id": "slide-003",
+    "start": 980.0,
+    "end": 1534.0,
+    "spoken_text": "There are trade-offs. Builds take longer, and reflection needs extra configuration. For long-running services the JIT can still reach higher peak performance.",
+    "slide_text": "Trade-offs\nBuild time, reflection, peak performance",
+    "image_path": "data/store/slides/c0e31f8ce0e31f9c.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  }
+]

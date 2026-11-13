@@ -1,0 +1,13 @@
+{
+  "source_id": "graalvm_aot",
+  "original_bytes": 220480662,
+  "distilled_bytes": 101015,
+  "saved_percent": 99.95,
+  "slide_count": 3,
+  "breakdown": {
+    "transcript.json": 837,
+    "records.json": 1610,
+    "graalvm_aot.txt": 647,
+    "slides": 97921
+  }
+}

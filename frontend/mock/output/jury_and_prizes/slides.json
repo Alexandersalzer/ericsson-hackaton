@@ -1,0 +1,29 @@
+[
+  {
+    "id": "slide-001",
+    "source_id": "jury_and_prizes",
+    "start": 0.0,
+    "end": 104.0,
+    "image_path": "data/store/slides/c0843f93c0e43fbb.jpg",
+    "phash": "c0843f93c0e43fbb",
+    "ocr_text": "Judging criteria\nTechnology, design, business, innovativeness"
+  },
+  {
+    "id": "slide-002",
+    "source_id": "jury_and_prizes",
+    "start": 104.0,
+    "end": 210.0,
+    "image_path": "data/store/slides/c0b63f89e0e21d9d.jpg",
+    "phash": "c0b63f89e0e21d9d",
+    "ocr_text": "Two prizes\nBest technology/design and best business"
+  },
+  {
+    "id": "slide-003",
+    "source_id": "jury_and_prizes",
+    "start": 210.0,
+    "end": 312.0,
+    "image_path": "data/store/slides/c0e23f9dc0e23d1d.jpg",
+    "phash": "c0e23f9dc0e23d1d",
+    "ocr_text": "Deliverables\nDay 2, 15:30. Five-minute presentation"
+  }
+]

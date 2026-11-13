@@ -1,0 +1,13 @@
+{
+  "source_id": "jury_and_prizes",
+  "original_bytes": 88654139,
+  "distilled_bytes": 94692,
+  "saved_percent": 99.89,
+  "slide_count": 3,
+  "breakdown": {
+    "transcript.json": 974,
+    "records.json": 1716,
+    "jury_and_prizes.txt": 730,
+    "slides": 91272
+  }
+}

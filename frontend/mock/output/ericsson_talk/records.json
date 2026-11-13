@@ -1,0 +1,67 @@
+[
+  {
+    "id": "ericsson_talk-slide-001",
+    "source_id": "ericsson_talk",
+    "slide_id": "slide-001",
+    "start": 0.0,
+    "end": 38.0,
+    "spoken_text": "Welcome everyone, and thank you for joining the hackathon today. Over the next twenty-four hours you will build a tech concept for one of our challenges. This challenge is about data storage, and I think it touches every team at Ericsson.",
+    "slide_text": "Hackathon\nTech concept challenge",
+    "image_path": "data/store/slides/e0c01f9fe0e01f1f.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  },
+  {
+    "id": "ericsson_talk-slide-002",
+    "source_id": "ericsson_talk",
+    "slide_id": "slide-002",
+    "start": 38.0,
+    "end": 92.0,
+    "spoken_text": "So what is the problem? We store more data every year, and most of it is never opened again. Meeting recordings are the biggest part. One hour of video can be one or two gigabytes. Storage costs money and energy, and it makes it harder to find what actually matters.",
+    "slide_text": "The problem\nStorage grows every year",
+    "image_path": "data/store/slides/c2c63db1c2c63d39.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  },
+  {
+    "id": "ericsson_talk-slide-003",
+    "source_id": "ericsson_talk",
+    "slide_id": "slide-003",
+    "start": 92.0,
+    "end": 131.0,
+    "spoken_text": "The second part of the problem is that the knowledge is locked inside the video. You cannot search a recording. If you want the one slide about latency, you have to watch it all.",
+    "slide_text": "The problem\nKnowledge is locked in video",
+    "image_path": "data/store/slides/c2c63db1c2c63d39.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  },
+  {
+    "id": "ericsson_talk-slide-004",
+    "source_id": "ericsson_talk",
+    "slide_id": "slide-004",
+    "start": 131.0,
+    "end": 214.0,
+    "spoken_text": "Here are some use cases we suggest. First, turn recorded meetings into text and slide images. Second, find duplicate documents. The same deck is often stored ten times in different folders. Third, offboarding. When someone leaves, what in their files is unique and what is a copy? Whatever you build, nothing important should be lost. Keep the knowledge, drop the weight.",
+    "slide_text": "Suggested Use Cases\nMeetings, documents, offboarding",
+    "image_path": "data/store/slides/c09b3fe4c0933f2c.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  },
+  {
+    "id": "ericsson_talk-slide-005",
+    "source_id": "ericsson_talk",
+    "slide_id": "slide-005",
+    "start": 214.0,
+    "end": 245.0,
+    "spoken_text": "That is it from me. The mentors are here all day, so come and ask us anything. Good luck, and have fun.",
+    "slide_text": "Ericsson logo\n(placeholder image)",
+    "image_path": "data/store/slides/c0cc3fb1c0cc3b3b.jpg",
+    "matched_doc": null,
+    "matched_page": null,
+    "match_distance": null
+  }
+]

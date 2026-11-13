@@ -1,0 +1,29 @@
+[
+  {
+    "id": "slide-001",
+    "source_id": "graalvm_aot",
+    "start": 0.0,
+    "end": 412.0,
+    "image_path": "data/store/slides/d0922fe9d0962f69.jpg",
+    "phash": "d0922fe9d0962f69",
+    "ocr_text": "Ahead-of-time compilation\nFrom bytecode to a native executable"
+  },
+  {
+    "id": "slide-002",
+    "source_id": "graalvm_aot",
+    "start": 412.0,
+    "end": 980.0,
+    "image_path": "data/store/slides/c0993fa6c0d93727.jpg",
+    "phash": "c0993fa6c0d93727",
+    "ocr_text": "Startup and memory\nMilliseconds instead of seconds"
+  },
+  {
+    "id": "slide-003",
+    "source_id": "graalvm_aot",
+    "start": 980.0,
+    "end": 1534.0,
+    "image_path": "data/store/slides/c0e31f8ce0e31f9c.jpg",
+    "phash": "c0e31f8ce0e31f9c",
+    "ocr_text": "Trade-offs\nBuild time, reflection, peak performance"
+  }
+]
